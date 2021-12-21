@@ -1,0 +1,5 @@
+.box{
+    margin-top: 1rem;
+    filter: drop-shadow(1px 1px 3px rgb(24, 23, 23));
+    width: 100%;
+}
