@@ -1,0 +1,17 @@
+[
+    {
+        "location": "Dharan",
+        "phnum": "348938495",
+        "isAvailable": "false"
+    },
+    {
+        "location": "Nepalgunj",
+        "phnum": "348938495",
+        "isAvailable": "true    "
+    },
+    {
+        "location": "Itahari",
+        "phnum": "348938495",
+        "isAvailable": "false"
+    }
+]

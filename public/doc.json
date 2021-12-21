@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Nischal",
+        "hospital": "BPKHS",
+        "days": ["sunday","monday"],
+        "department": "ENT",
+        "location": "Dharan"
+    },
+    {
+        "name": "Aashish",
+        "hospital": "BPKHS",
+        "days": ["sunday","monday"],
+        "department": "ENT",
+        "location": "Dharan"
+    },
+    {
+        "name": "Sabina",
+        "hospital": "BPKHS",
+        "days": ["sunday","monday"],
+        "department": "ENT",
+        "location": "Dharan"
+    },
+    {
+        "name": "Kapil",
+        "hospital": "BPKHS",
+        "days": ["sunday","monday"],
+        "department": "ENT",
+        "location": "Dharan"
+    }
+]
