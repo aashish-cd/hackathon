@@ -1,24 +1,33 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import React from 'react';
+import ImageGallary from 'react-image-gallery';
 
 const Carasoul = () => {
-    return (
-        <Carousel>
-            <div>
-                <img src="assets/1.jpeg" />
-                <p className="legend">Legend 1</p>
-            </div>
-            <div>
-                <img src="assets/2.jpeg" />
-                <p className="legend">Legend 2</p>
-            </div>
-            <div>
-                <img src="assets/3.jpeg" />
-                <p className="legend">Legend 3</p>
-            </div>
-        </Carousel>
-    );
+  const images = [
+    {
+      original: 'https://picsum.photos/id/1018/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1018/250/150/',
+    },
+    {
+      original: 'https://picsum.photos/id/1015/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1015/250/150/',
+    },
+    {
+      original: 'https://picsum.photos/id/1019/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1019/250/150/',
+    },
+  ];
+  return (
+    <ImageGallary
+      items={images}
+      showNav={false}
+      autoPlay={true}
+      showThumbnails={false}
+      slideDuration={1000}
+      showPlayButton={false}
+      showFullscreenButton={false}
+      originalTitle={'hello '}
+    />
+  );
 };
 
 export default Carasoul;
