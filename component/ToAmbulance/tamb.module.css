@@ -27,8 +27,9 @@
 
 .details{
     text-align: center;
-    font-size: 1.2rem;
-    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
     z-index: 1000;
 }
 .details > h2{
@@ -47,4 +48,29 @@
 }
 .details > button:hover {
     transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    .wholeToAppointContainer{
+        display: block;
+    }
+
+    .imageHolder > img{
+        margin-left: 20%;
+        margin-top: 60%;
+        width: 100%;
+        position: absolute;
+        top: 30%;
+    }
+    .details{
+        right: auto;
+        z-index: 100;
+        font-size: 1rem;
+    }
+    .details > h2{
+        font-size: 1.8rem;
+    }
+    .details > button{
+        font-size: 1rem;
+    }
 }

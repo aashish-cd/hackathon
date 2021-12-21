@@ -32,16 +32,16 @@
     bottom: 20%;
     left: 50%;
     text-align: center;
-    font-size: 1.2rem;
-    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    
 }
 .details > h2{
     font-family: 'Roboto Mono', monospace;
     font-size: 3rem;
 }
 .details > p{
-    font-family: 'PT Sans', sans-serif;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
 }
 .details > button{
     width: fit-content;
@@ -55,4 +55,29 @@
 }
 .details > button:hover {
     transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    .wholeToAppointContainer{
+        width: 100%;
+        display: block;
+    }
+    .details{
+        position: absolute;
+        top:0%;
+        right: auto;
+        z-index: 100;
+        font-size: .9rem;
+    }
+    .details > h2{
+        font-size: 1.8rem;
+    }
+    .details > button{
+        font-size: 1rem;
+    }
+    .imageHolder > img{
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+    }
 }

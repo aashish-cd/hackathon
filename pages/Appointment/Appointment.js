@@ -21,7 +21,14 @@ const Appointment = () => {
 
     return (
         <>
-        <input type="text" value={searchData} onChange={e => setSearchData(e.target.value)}/>
+        <div className={style.searchWrapper}>
+                <label htmlFor="inp"> Search Name: </label>
+                <input
+                    type="text"
+                    value={searchData}
+                    onChange={(e) => setSearchData(e.target.value)}
+                />
+            </div>
         <div className={`${style.holder} ${style.head}`}>
             <div>Name</div>
             <div>Department</div>
