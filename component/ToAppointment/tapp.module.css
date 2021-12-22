@@ -1,5 +1,5 @@
 .wholeToAppointContainer {
-    height: 80vh;
+    height: 92vh;
     max-width: 90%;
     margin: 2rem auto;
     display: grid;
@@ -33,10 +33,12 @@
 .details > h2{
     font-family: 'Roboto Mono', monospace;
     font-size: 3rem;
+    color: rgb(43, 41, 41);
 }
 .details > p{
     font-weight: 600;
     font-family: 'Inter', sans-serif;
+    color: rgb(77, 74, 74);
 }
 .details > * {
     margin: .2rem auto;
@@ -46,10 +48,11 @@
     padding: .5rem;
     font-size: 1.2rem;
     border: 0px;
-    background-color: #24455e;
-    color: white;
+    background-color: #77bd41;
+    color: rgb(37, 36, 36);
     cursor: pointer;
     transition: transform .3s ease;
+    font-weight: 600;
 }
 .details > button:hover {
     transform: scale(1.05);

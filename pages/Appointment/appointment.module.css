@@ -58,7 +58,7 @@
     transition: transform .2s ease-in-out;
 }
 .holder:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 .holder > button:hover{
     transform: scale(1.05);

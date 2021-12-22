@@ -1,3 +1,12 @@
+.ambSection{
+    background-color: rgb(60, 155, 101);
+    padding: 5rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .wholeToAppointContainer {
     /* height: 80vh; */
     width: 90%;
@@ -32,20 +41,23 @@
     font-weight: 600;
     font-family: 'Inter', sans-serif;
     z-index: 1000;
+    color: rgb(77, 74, 74);
 }
 .details > h2{
     font-family: 'Roboto Mono', monospace;
     font-size: 3rem;
+    color: rgb(29, 28, 28);
 }
 .details > button{
     width: fit-content;
     padding: .5rem;
     font-size: 1.2rem;
     border: 0px;
-    background-color: #24455e;
+    background-color: #77bd41;
     color: white;
     cursor: pointer;
     transition: transform .3s ease;
+    color: black;
 }
 .details > button:hover {
     transform: scale(1.05);

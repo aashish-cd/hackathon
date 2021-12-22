@@ -31,7 +31,7 @@
     transition: transform .3s ease;
 }
 .holder:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 .head{
     background-color: #406882;
@@ -60,7 +60,7 @@
     transition: transform .2s ease-in-out;
 }
 .holder > button:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 @media screen and (max-width: 600px) {

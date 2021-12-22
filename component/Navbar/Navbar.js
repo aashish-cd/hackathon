@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <>
+    <div className={style.NavbarContainer}>
     <div className={style.Navbar}>
       <li>
         <Link href='/'>Home</Link>
@@ -16,8 +16,8 @@ const Navbar = () => {
         <Link href='/Appointment/Appointment'>Appointment</Link>
       </li>
     </div>
-    
-    </>
+
+    </div>
   );
 };
 
