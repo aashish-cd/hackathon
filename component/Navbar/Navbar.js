@@ -15,6 +15,9 @@ const Navbar = () => {
       <li>
         <Link href='/Appointment/Appointment'>Appointment</Link>
       </li>
+      <li>
+        <Link href='/Medicines/Medicine'>Pharmacy</Link>
+      </li>
     </div>
 
     </div>

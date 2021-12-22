@@ -1,0 +1,30 @@
+.medicineWrapper{
+    width: 80%;
+    margin: auto auto;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+.cardHolder{
+    width: 16rem;
+    height: fit-content;
+    padding: .4rem;
+    /* background-color: seagreen; */
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow .4s ease;
+    border-radius: 10px;
+}
+.cardHolder:hover{
+    box-shadow: 2px 2px 8px rgb(90, 212, 53);
+}
+.imgHolder{
+    width: 100%;
+    height: 80%;
+}
+.imgHolder > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

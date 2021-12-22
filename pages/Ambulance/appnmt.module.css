@@ -34,7 +34,7 @@
     transform: scale(1.02);
 }
 .head{
-    background-color: #406882;
+    background-color: #64af51;
     border-radius: 0px 0px 5px 5px;
     font-weight: 500;
     font-size: 1.3rem;  
@@ -54,7 +54,7 @@
     height: 2rem;
     cursor: pointer;
     border: 0px;
-    background-color: #1A374D;
+    background-color: #1cad75;
     color: white;
     filter: drop-shadow(1px 1px 3px #214561);
     transition: transform .2s ease-in-out;

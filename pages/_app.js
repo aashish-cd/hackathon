@@ -5,7 +5,7 @@ import Navbar from '../component/Navbar/Navbar';
 import axios from 'axios';
 
 function MyApp({ Component, pageProps }) {
-  axios.defaults.baseURL = 'http://192.168.18.118:5000'
+  axios.defaults.baseURL = 'http://10.10.10.199:5000'
   return (
     <>
       <Head>
