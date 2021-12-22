@@ -1,12 +1,12 @@
 .Navbar{
+    height: 3.4rem;
+    background-color: #3bd433;
     display: flex;
     list-style-type: none;
-    justify-content: center;
-    background-color: #214252;
-    color: white;
-    padding: .3rem;
-    font-size: 1.2rem;
+    justify-content: space-around;
+    align-items: center;
 }
-.Navbar > *{
-    margin: auto .5rem;
+
+.Navbar li{
+    font-size: 18px;
 }

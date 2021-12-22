@@ -14,9 +14,10 @@
     border-bottom: 2px solid rgb(19, 81, 117);
 }
 
-.holder{
+.holder,.head{
     width: 90%;
-    margin: .4rem auto;
+    margin: auto auto;
+    margin-bottom:.2rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     justify-items: center;
@@ -27,10 +28,15 @@
     border-radius: 5px;
     box-shadow: 1px 1px 3px #406882;
 }
+.holder{
+    transition: transform .2s ease-in-out;
+}
 
 .head{
     background-color: #406882;
-    border-radius: 0px;
+    border-radius: 0px 0px 5px 5px;
+    font-weight: 500;
+    font-size: 1.3rem;  
 }
 
 .holder > div{
@@ -43,12 +49,16 @@
     align-self: center;
     font-size: 1.1rem;
     height: fit-content;
+    padding: .4rem;
     cursor: pointer;
     border: 0px;
     background-color: #1A374D;
     color: white;
     filter: drop-shadow(1px 1px 3px #214561);
     transition: transform .2s ease-in-out;
+}
+.holder:hover{
+    transform: scale(1.05);
 }
 .holder > button:hover{
     transform: scale(1.05);
@@ -61,6 +71,20 @@
     .holder{
         width: 95%;
         grid-template-columns: repeat(3,1fr);
+        grid-template-areas:  
+        "one", "two", "three"
+        "four", "five"
+        ;
         font-size: .8rem;
+    }
+    .head > div{
+        font-size: 1rem;
+    }
+    /* .six{
+        grid-column: 4/5;
+        grid-row: 1/2;
+    } */
+    .four,.five,.six{
+        display: none;
     }
   }

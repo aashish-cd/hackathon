@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
+    <>
     <div className={style.Navbar}>
       <li>
         <Link href='/'>Home</Link>
@@ -11,7 +12,12 @@ const Navbar = () => {
       <li>
         <Link href='/Ambulance/Ambulance'>Ambulance</Link>
       </li>
+      <li>
+        <Link href='/Appointment/Appointment'>Appointment</Link>
+      </li>
     </div>
+    
+    </>
   );
 };
 

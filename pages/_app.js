@@ -2,8 +2,10 @@ import '../styles/globals.css';
 import '../styles/Form.css';
 import Head from 'next/head';
 import Navbar from '../component/Navbar/Navbar';
+import axios from 'axios';
 
 function MyApp({ Component, pageProps }) {
+  axios.defaults.baseURL = 'http://192.168.18.118:5000'
   return (
     <>
       <Head>

@@ -27,7 +27,7 @@ const Ambulance = () => {
                     onChange={(e) => setSearchData(e.target.value)}
                 />
             </div>
-            <div className="table" className={`${style.holder} ${style.head}`}>
+            <div className="table" className={`${style.head}`}>
                 <div>Location</div>
                 <div>Phone Num</div>
                 <div>Availability</div>
