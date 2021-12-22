@@ -1,6 +1,6 @@
 .wholeToAppointContainer {
     width: 90%;
-    margin: 5rem auto;
+    margin: auto auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-height: 20rem;
@@ -52,15 +52,16 @@
 
 @media screen and (max-width: 600px) {
     .wholeToAppointContainer{
+        width: 100%;
         display: block;
     }
 
     .imageHolder > img{
+        position: absolute;
+        /* top: 10%; */
         margin-left: 20%;
         margin-top: 60%;
-        width: 100%;
-        position: absolute;
-        top: 30%;
+        width: 80%;
     }
     .details{
         right: auto;
