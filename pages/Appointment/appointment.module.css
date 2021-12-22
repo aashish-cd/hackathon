@@ -28,6 +28,11 @@
     border-radius: 5px;
     box-shadow: 1px 1px 3px #406882;
 }
+
+.holder > div{
+    font-family: 'Montserrat',sans-serif;
+}
+
 .holder{
     transition: transform .2s ease-in-out;
 }
@@ -67,24 +72,24 @@
 @media screen and (max-width: 600px) {
     .searchWrapper{
         font-size: 1rem;
+        width: 80%;
     }
-    .holder{
+    .searchWrapper > input{
+        width: 10rem;
+    }
+    .tableHolder{
         width: 95%;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-areas:  
-        "one", "two", "three"
-        "four", "five"
-        ;
-        font-size: .8rem;
+        margin: auto auto;
+        overflow-y: scroll;
+        /* height: 20rem; */
     }
-    .head > div{
+    .head,.holder{
+        width: 60rem;
         font-size: 1rem;
+        font-weight: 400;
     }
-    /* .six{
-        grid-column: 4/5;
-        grid-row: 1/2;
-    } */
-    .four,.five,.six{
-        display: none;
+    .holder > button{
+        font-size: 1rem;
+        padding: 0rem;
     }
   }

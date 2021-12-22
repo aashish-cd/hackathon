@@ -2,17 +2,62 @@
     width: 100%;
     height: 3.4rem;
     background-color: #3bd433;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
 }
 .Navbar{
     display: flex;
     height: 100%;
-    width: 80%;
+    width: 60%;
     margin: auto auto;
     list-style-type: none;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .Navbar li{
-    font-size: 18px;
+    font-size: 1.3rem;
+    filter: drop-shadow(1px 1px 2px rgb(2, 29, 2));
+}
+.Navbar li:hover{
+    color: rgb(211, 28, 156);
+}
+
+.icon{
+    height: 90%;
+    margin: auto auto;
+}
+
+.barHolder{
+    display: none;
+} 
+
+@media screen and (max-width: 690px) {
+    .Navbar{
+        flex-direction: column;
+        margin-top: 3.4rem;
+        background-color: #3bd433;
+        width: 100vw;
+        height: fit-content;
+        z-index: 9;
+    }
+    .heheBOi{
+        transform: translateY(200px);
+    }
+    .Navbar > li{
+        font-size: 1.1rem;
+        margin: .3rem auto;
+    }
+    .barHolder{
+        position: absolute;
+        display: block;
+        z-index: 999;
+        padding: .6rem;
+    } 
+    .Bar{
+        height: 2rem;
+        width: 1.6rem;
+    }
 }

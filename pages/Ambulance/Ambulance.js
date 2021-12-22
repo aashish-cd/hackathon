@@ -14,7 +14,7 @@ const Ambulance = () => {
     };
 
     useEffect(() => {
-        fetching("http://192.168.18.118:5000/api/ambulances/all");
+        fetching("/api/ambulances/all");
     }, []);
 
     return (
@@ -27,6 +27,7 @@ const Ambulance = () => {
                     onChange={(e) => setSearchData(e.target.value)}
                 />
             </div>
+            <div className={style.tableHolder}>
             <div className="table" className={`${style.head}`}>
                 <div>Location</div>
                 <div>Phone Num</div>
@@ -58,7 +59,9 @@ const Ambulance = () => {
                         </div>
                     );
                 }
+               
             })}
+             </div>
         </>
     );
 };

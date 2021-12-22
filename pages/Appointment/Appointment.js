@@ -5,15 +5,14 @@ import Link from "next/link";
 import Form from "../../component/Form";
 
 const Appointment = () => {
-
-    const [docName, setDocName] = useState("")
+    const [docName, setDocName] = useState("");
     const [overlay, setOverlay] = useState(false);
 
-    const overlayController = (e,value) => {
+    const overlayController = (e, value) => {
         setOverlay(value);
-        if(e) {
-        let parent = e.target.parentElement;
-        setDocName(parent.firstElementChild.textContent);
+        if (e) {
+            let parent = e.target.parentElement;
+            setDocName(parent.firstElementChild.textContent);
         }
     };
 
@@ -27,7 +26,7 @@ const Appointment = () => {
     };
 
     useEffect(() => {
-        fetching("http://192.168.18.118:5000/api/doctors/all");
+        fetching("/api/doctors/all");
     }, []);
 
     console.log(data);
@@ -42,39 +41,41 @@ const Appointment = () => {
                     onChange={(e) => setSearchData(e.target.value)}
                 />
             </div>
-            <div className={`${style.head}`}>
-                <div className="1">Name</div>
-                <div className="2">Department</div>
-                <div className="3">Time</div>
-                <div className={style.four}>Hospital</div>
-                <div className={style.five}>Location</div>
-                <div className={style.six}>Appointment</div>
+            <div className={style.tableHolder}>
+                <div className={`${style.head}`}>
+                    <div>Name</div>
+                    <div>Department</div>
+                    <div>Time</div>
+                    <div>Hospital</div>
+                    <div>Location</div>
+                    <div>Appointment</div>
+                </div>
+                {data?.map((obj) => {
+                    if (
+                        obj.name.toLowerCase().includes(searchData) ||
+                        obj.name.includes(searchData) ||
+                        obj.name.toUpperCase().includes(searchData)
+                    ) {
+                        return (
+                            <div key={Math.random()} className={style.holder}>
+                                <div>{obj.name}</div>
+                                <div>{obj.department}</div>
+                                <div>{obj.workingHours}</div>
+                                <div>{obj.hospital}</div>
+                                <div>{obj.location}</div>
+                                <button
+                                    onClick={(e) => {
+                                        overlayController(e, true);
+                                    }}
+                                >
+                                    Make an appointment
+                                </button>
+                            </div>
+                        );
+                    }
+                })}
             </div>
-            {data?.map((obj) => {
-                if (
-                    obj.name.toLowerCase().includes(searchData) ||
-                    obj.name.includes(searchData) ||
-                    obj.name.toUpperCase().includes(searchData)
-                ) {
-                    return (
-                        <div key={Math.random()} className={style.holder}>
-                            <div>{obj.name}</div>
-                            <div>{obj.department}</div>
-                            <div>{obj.workingHours}</div>
-                            <div>{obj.hospital}</div>
-                            <div>{obj.location}</div>
-                            <button
-                                onClick={(e) => {
-                                    overlayController(e,true);
-                                }}
-                            >
-                                Make an appointment
-                            </button>
-                        </div>
-                    );
-                }
-            })}
-            {overlay && <Form overlay={overlayController} docName = {docName} />}
+            {overlay && <Form overlay={overlayController} docName={docName} />}
         </>
     );
 };

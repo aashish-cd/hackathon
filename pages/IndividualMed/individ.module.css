@@ -1,0 +1,61 @@
+.wholeContainer{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin: 1rem auto;
+}
+.imgHolder{
+    height: 20rem;
+    width: 20rem;
+}
+
+.imgHolder >img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail{
+    text-align: center;
+    margin-top: 3rem;
+}
+.detail > *{
+    margin: .2rem auto;
+}
+
+.detail > button{
+    width: 6rem;
+    height: 1.6rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: fit-content;
+    background-color: #1cad75;
+    border: 0px;
+    color: rgb(255, 254, 254);
+    transition: all .2s ease;
+}
+.detail > button:hover{
+    transform: scale(1.02);
+    box-shadow: 1px 1px 6px black;
+}
+
+@media screen and (max-width: 690px) {
+    .wholeContainer{
+        width: 100%;
+        grid-template-columns: repeat(1 ,1fr);
+        grid-template-rows: repeat(2,1fr);
+        justify-items: center;
+        align-content: center;
+    }
+    .detail{
+        margin-top: 0;
+        width: 90%;
+        margin: auto auto;
+    }
+    .imgHolder{
+        height: 13rem;
+        width: 90%;
+        margin: auto auto;
+    }
+}

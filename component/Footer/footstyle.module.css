@@ -1,0 +1,12 @@
+.footWrapper{
+    padding: 1.4rem;
+    background-color: #42854a;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+/* .secOne{
+    text-align: center;
+    padding: 1rem;
+} */
