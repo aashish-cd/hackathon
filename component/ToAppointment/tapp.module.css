@@ -1,0 +1,83 @@
+.wholeToAppointContainer {
+    width: 90%;
+    margin: auto auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 80vh;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.imageHolder{
+    margin: 1rem auto;
+    width: 90%;
+    height: 60rem;
+    grid-column: 1/3;
+}
+
+.imageHolder > img{
+    width: 100%;
+    height: 57%;
+    object-fit: cover;
+    filter: drop-shadow(1px 2px 7px black);
+    transition: transform .4s ease;
+}
+.imageHolder > img:hover{
+    transform: scale(1.04);
+}
+
+.details{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    
+}
+.details > h2{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3rem;
+}
+.details > p{
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+.details > button{
+    width: fit-content;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border: 0px;
+    background-color: #24455e;
+    color: white;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+.details > button:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    .wholeToAppointContainer{
+        width: 100%;
+        display: block;
+    }
+    .details{
+        position: absolute;
+        top:0%;
+        right: auto;
+        z-index: 100;
+        font-size: .9rem;
+    }
+    .details > h2{
+        font-size: 1.8rem;
+    }
+    .details > button{
+        font-size: 1rem;
+    }
+    .imageHolder > img{
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+    }
+}

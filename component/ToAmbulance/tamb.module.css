@@ -1,0 +1,76 @@
+.wholeToAppointContainer {
+    width: 90%;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 20rem;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.imageHolder{
+    margin: 1rem auto;
+    width: 100%;
+    height: 100%;
+}
+
+.imageHolder > img{
+    height: 95%;
+    object-fit: contain;
+    filter: drop-shadow(1px 2px 7px black);
+    transition: transform .4s ease;
+}
+.imageHolder > img:hover{
+    transform: scale(1.04);
+}
+
+.details{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    z-index: 1000;
+}
+.details > h2{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3rem;
+}
+.details > button{
+    width: fit-content;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border: 0px;
+    background-color: #24455e;
+    color: white;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+.details > button:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    .wholeToAppointContainer{
+        display: block;
+    }
+
+    .imageHolder > img{
+        margin-left: 20%;
+        margin-top: 60%;
+        width: 100%;
+        position: absolute;
+        top: 30%;
+    }
+    .details{
+        right: auto;
+        z-index: 100;
+        font-size: 1rem;
+    }
+    .details > h2{
+        font-size: 1.8rem;
+    }
+    .details > button{
+        font-size: 1rem;
+    }
+}
