@@ -5,9 +5,6 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
-body{
-  position: relative;
-}
 .container{
   max-width: 700px;
   width: 100%;

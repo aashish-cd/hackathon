@@ -9,7 +9,7 @@
 
 .wholeToAppointContainer {
     /* height: 80vh; */
-    width: 90%;
+    width: 100%;
     margin: auto auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -73,8 +73,10 @@
 
 @media screen and (max-width: 600px) {
     .wholeToAppointContainer{
-        width: 90%;
+        width: 100%;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap-reverse;
     }
 
@@ -82,12 +84,13 @@
         width: 80%;
     }
     .details{
-        font-size: 1rem;
+        font-size: .9rem;
     }
     .details > h2{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .details > button{
+        width: 15rem;
         font-size: 1rem;
     }
 }
