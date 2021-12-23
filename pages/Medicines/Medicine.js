@@ -4,15 +4,19 @@ import style from "./medstyle.module.css";
 import Link from "next/link";
 import { context } from "../../context/context";
 import IndividualMed from "../IndividualMed/IndividualMed";
+import Loader from "react-loader-spinner";
 
 const Medicine = () => {
     const [objToSend, setobjToSend] = useState({});
     const [data, setData] = useState([]);
     const [isVisible, setisVisible] = useState(false);
 
+    const [loading, setLoading] = useState(false)
     const fetching = async (url) => {
+        setLoading(true)
         const response = await axios.get(url);
         setData(response.data);
+        setLoading(false)
     };
 
     useEffect(() => {
@@ -28,6 +32,9 @@ const Medicine = () => {
     let object = { ...objToSend };
     return (
         <>
+        {loading && <div className="loaderContainer">
+                <Loader type="Puff" color="#00BFFF" height={200} width={200} />
+            </div>}
           {isVisible &&  <Link href="./IndividualMed/IndividualMed">
                 <context.Provider value={objToSend}>
                     <IndividualMed />
@@ -45,9 +52,9 @@ const Medicine = () => {
                             <div className={style.imgHolder}>
                                 <img src={obj.image} alt="" />
                             </div>
-                            <div>
+                            <h4>
                                 {obj.name}({obj.quantityInMg})
-                            </div>
+                            </h4>
                             <div>Rs. {obj.price}</div>
                             <div>In Stock: {obj.stock}</div>
                             <div></div>

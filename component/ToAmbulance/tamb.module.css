@@ -64,6 +64,11 @@
 }
 .details > * {
     margin: .3rem auto;
+    font-family: 'Inter', sans-serif;
+}
+.details > h2, .details > p{
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
 }
 
 @keyframes anim {

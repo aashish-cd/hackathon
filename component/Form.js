@@ -10,6 +10,7 @@ const Form = (props) => {
     const [location, setLocation] = useState("");
     const [doctorName, setDoctorName] = useState(props.docName);
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState(false)
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -23,18 +24,38 @@ const Form = (props) => {
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+
+            setName('')
+            setEmail('')
+            setPhone('')
+            setLocation('')
+            setDoctorName('')
+            setMessage(true)
+            setTimeout(() => {
+                setMessage(false)
+            }, 5000);
         setLoading(false);
     };
     return (
         <div className={style.overlay}>
             {loading ? (
+                <div className="loaderContainer">
+
                 <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+                </div>
             ) : (
                 <div>
                     <div className="container">
                         <div className="title">
-                            get Appointment for doctor: {props.docName}
+                            Get an appointment with {props.docName}
                         </div>
+                        {
+                            message &&  <div className='message-notification'>
+                            <p className='message-text' style={{color:'green'}}>
+                              Submitted! we will get back to you soon
+                            </p>
+                          </div>
+                        }
                         <div
                             className={style.cross}
                             onClick={() => {
@@ -65,7 +86,7 @@ const Form = (props) => {
                                             Phone no.
                                         </span>
                                         <input
-                                            type="text"
+                                            type="number"
                                             placeholder="Enter your phone no. "
                                             value={phone}
                                             onChange={(e) =>
@@ -76,7 +97,7 @@ const Form = (props) => {
                                     <div className="input-box">
                                         <span className="details">Email</span>
                                         <input
-                                            type="text"
+                                            type="email"
                                             placeholder="Enter your email id"
                                             value={email}
                                             onChange={(e) =>

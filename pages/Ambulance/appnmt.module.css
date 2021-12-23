@@ -1,3 +1,6 @@
+.ambulContainer{
+    min-height: 80vh;
+}
 .searchWrapper{
     margin: 1rem auto;
     display: flex;
@@ -62,6 +65,10 @@
 }
 .holder > button:hover{
     transform: scale(1.01);
+}
+
+.tableHolder{
+    margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 600px) {

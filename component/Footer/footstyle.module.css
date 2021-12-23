@@ -1,12 +1,21 @@
 .footWrapper{
     padding: 1.4rem;
     background-color: #42854a;
+    /* position: absolute; */
+    /* bottom: 0;
+    left: 0;
+    right: 0; */
+    min-height: 12rem;
 }
+
 .container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-gap: .5rem;
 }
-/* .secOne{
-    text-align: center;
-    padding: 1rem;
-} */
+
+@media screen and (max-width: 690px) {
+    .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

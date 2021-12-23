@@ -6,6 +6,7 @@ import style from "./formstyle.module.css";
 const Form = (props) => {
     const [name, setName] = useState("");
     const [totalPrice, setTotalPrice] = useState(parseInt(props.totalPrice))
+
     
 
     const [medicineName, setMedicineName] = useState(props.medicineName);
@@ -13,9 +14,17 @@ const Form = (props) => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(false)
 
     const handleSubmit = async () => {
-        setLoading(true);
+        
+        if(email.includes('@') === false){
+            setErrorMessage(true)
+           
+        }else{
+            setLoading(true);
+    
         await axios
             .post("/api/orders/add", {
                 userName: name,
@@ -27,14 +36,29 @@ const Form = (props) => {
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-        setLoading(false);
+
+            setName('')
+            setTotalPrice(0)
+            setMedicineName('')
+            setShippingAddress('')
+            setEmail('')
+            setPhone('')
+            setErrorMessage(false)
+            
+
+            setMessage(true)
+            setTimeout(() => {
+                setMessage(false)
+            }, 3000);
+        setLoading(false);    }
     };
     return (
         <div className={style.overlay}>
             {loading ? (
-                <div className={style.loaderContianer}>
-                <Loader type="Puff" color="#00BFFF" height={100} width={100} />
-                </div>    
+               <div className="loaderContainer">
+
+               <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+               </div>   
             ) : (
                 <div>
                     
@@ -44,6 +68,16 @@ const Form = (props) => {
                         <div className="title">
                             Please Submit Your Detail To Continue: 
                         </div>
+                        {
+                            message && <div className="message-notification" >
+                                <p className="message-text" style={{color:'green'}}>Data added successfully</p>
+                            </div>
+                        }
+                        {
+                            errorMessage && <div className="message-notification">
+                                <p className="message-text">data validation failed</p>
+                            </div>
+                        }
                         <div
                             className={style.cross}
                             onClick={() => {
@@ -115,7 +149,7 @@ const Form = (props) => {
                                     <div className="input-box">
                                         <span className="details">Email</span>
                                         <input
-                                            type="text"
+                                            type="email"
                                             placeholder="Enter your email id"
                                             value={email}
                                             onChange={(e) =>

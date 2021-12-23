@@ -1,62 +1,76 @@
-.NavbarContainer{
+.NavbarContainer {
     width: 100%;
-    height: 3.4rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    height: 8vh;
     background-color: #3bd433;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 999;
 }
-.Navbar{
+.Navbar {
     display: flex;
     height: 100%;
     width: 60%;
-    margin: auto auto;
     list-style-type: none;
     justify-content: space-between;
     align-items: center;
 }
 
-.Navbar li{
-    font-size: 1.3rem;
-    filter: drop-shadow(1px 1px 2px rgb(2, 29, 2));
+.iconContainer {
+    height: 8vh;
 }
-.Navbar li:hover{
+.icon {
+    height: 100%;
+}
+
+.Navbar li {
+    font-size: 1.3rem;
+    filter: drop-shadow(0.5px 0.5px 1px rgb(2, 29, 2));
+}
+.Navbar li:hover {
     color: rgb(211, 28, 156);
 }
 
-.icon{
+.icon {
     height: 90%;
     margin: auto auto;
 }
 
-.barHolder{
+.barHolder {
     display: none;
-} 
+}
 
 @media screen and (max-width: 690px) {
-    .Navbar{
+    .NavbarContainer {
+        padding: 0;
+    }
+    .Navbar {
         flex-direction: column;
-        margin-top: 3.4rem;
+        margin-top: 24vh;
         background-color: #3bd433;
         width: 100vw;
         height: fit-content;
         z-index: 9;
     }
-    .heheBOi{
-        transform: translateY(200px);
+    .iconContainer {
+        position: absolute;
+        left: 4%;
+        z-index: 999;
     }
-    .Navbar > li{
+    .Navbar > li {
         font-size: 1.1rem;
-        margin: .3rem auto;
+        margin: 0.3rem auto;
     }
-    .barHolder{
+    .barHolder {
         position: absolute;
         display: block;
+        right: 4%;
         z-index: 999;
-        padding: .6rem;
-    } 
-    .Bar{
+        padding: 0.6rem;
+    }
+    .Bar {
         height: 2rem;
         width: 1.6rem;
     }

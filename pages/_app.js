@@ -6,11 +6,11 @@ import Footer from "../component/Footer/Footer";
 import axios from "axios";
 
 function MyApp({ Component, pageProps }) {
-    axios.defaults.baseURL = "http://10.10.10.199:5000";
+    axios.defaults.baseURL = "http://192.168.228.187:5000";
     return (
         <>
             <Head>
-                <title>DandT</title>
+                <title>E-HEALTH CARES</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"

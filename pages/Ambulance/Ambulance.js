@@ -2,15 +2,20 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import style from "./appnmt.module.css";
 import { FiPhoneCall } from "react-icons/fi";
+import Loader from 'react-loader-spinner'
+
 
 const Ambulance = () => {
     const [searchData, setSearchData] = useState("");
 
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false)
 
     const fetching = async (url) => {
+        setLoading(true)
         const response = await axios.get(url);
         setData(response.data);
+        setLoading(false)
     };
 
     useEffect(() => {
@@ -18,7 +23,10 @@ const Ambulance = () => {
     }, []);
 
     return (
-        <>
+        <div className={style.ambulContainer}>
+        {loading && <div className="loaderContainer">
+                <Loader type="Puff" color="#00BFFF" height={200} width={200} />
+            </div>}
             <div className={style.searchWrapper}>
                 <label htmlFor="inp"> Search Location: </label>
                 <input
@@ -62,7 +70,7 @@ const Ambulance = () => {
                
             })}
              </div>
-        </>
+        </div>
     );
 };
 

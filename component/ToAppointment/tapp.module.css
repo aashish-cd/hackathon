@@ -31,14 +31,16 @@
     
 }
 .details > h2{
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     color: rgb(43, 41, 41);
+    margin-bottom: 1rem;;
 }
 .details > p{
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: rgb(77, 74, 74);
+    margin-bottom: 1rem;;
 }
 .details > * {
     margin: .2rem auto;

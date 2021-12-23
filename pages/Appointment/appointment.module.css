@@ -1,3 +1,10 @@
+.tableHolder{
+    margin-bottom: 3rem;
+}
+.appointmentWrapper{
+    min-height: 80vh;
+
+}
 .searchWrapper{
     margin: 1rem auto;
     display: flex;

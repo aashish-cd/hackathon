@@ -3,10 +3,12 @@ import axios from "axios";
 import style from "./appointment.module.css";
 import Link from "next/link";
 import Form from "../../component/Form";
+import Loader from "react-loader-spinner";
 
 const Appointment = () => {
     const [docName, setDocName] = useState("");
     const [overlay, setOverlay] = useState(false);
+    const [loading, setLoading] = useState(false)
 
     const overlayController = (e, value) => {
         setOverlay(value);
@@ -21,8 +23,10 @@ const Appointment = () => {
     const [data, setData] = useState([]);
 
     const fetching = async (url) => {
+        setLoading(true)
         const response = await axios.get(url);
         setData(response.data);
+        setLoading(false)
     };
 
     useEffect(() => {
@@ -32,7 +36,10 @@ const Appointment = () => {
     console.log(data);
 
     return (
-        <>
+        <div className={style.appointmentWrapper}>
+        <>{loading && <div className="loaderContainer">
+        <Loader type="Puff" color="#00BFFF" height={200} width={200} />
+    </div>}
             <div className={style.searchWrapper}>
                 <label htmlFor="inp"> Search Name: </label>
                 <input
@@ -77,6 +84,7 @@ const Appointment = () => {
             </div>
             {overlay && <Form overlay={overlayController} docName={docName} />}
         </>
+        </div>
     );
 };
 
