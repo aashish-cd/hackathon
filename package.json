@@ -19,5 +19,6 @@
   "devDependencies": {
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7"
-  }
+  },
+  "proxy": "https://hack-back-aces.herokuapp.com"
 }
