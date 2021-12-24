@@ -37,7 +37,7 @@ const Ambulance = () => {
         />
       </div>
       <div className={style.tableHolder}>
-        <div className='table' className={`${style.head}`}>
+        <div className={`${style.head} table`}>
           <div>Location</div>
           <div>Phone Num</div>
           <div>Availability</div>
