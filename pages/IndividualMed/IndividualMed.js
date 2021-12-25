@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { context } from '../../context/context';
 import style from './individ.module.css';
 import Form from '../../component/FormBuy';
+import Medicine from '../Medicines/Medicine';
 
 const IndividualMed = () => {
   const [totalPrice, settotalPrice] = useState(0);
@@ -57,6 +58,8 @@ const IndividualMed = () => {
           totalPrice={totalPrice}
         />
       )}
+
+      <Medicine />
     </>
   );
 };

@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState, useContext } from 'react';
+
 import style from './appnmt.module.css';
 import { FiPhoneCall } from 'react-icons/fi';
 import Loader from 'react-loader-spinner';
+import { IndexContext } from '../../context/index.context';
 
 const Ambulance = () => {
   const [searchData, setSearchData] = useState('');
-
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetching = async (url) => {
-    setLoading(true);
-    const response = await axios.get(url);
-    setData(response.data);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    fetching('/api/ambulances/all');
-  }, []);
+  const { ambulanceData, loading } = useContext(IndexContext);
 
   return (
     <div className={style.ambulContainer}>
@@ -43,7 +31,7 @@ const Ambulance = () => {
           <div>Availability</div>
           <div>Call</div>
         </div>
-        {data?.map((obj) => {
+        {ambulanceData?.map((obj) => {
           if (
             obj.location.toLowerCase().includes(searchData) ||
             obj.location.includes(searchData) ||

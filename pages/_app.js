@@ -4,9 +4,12 @@ import Head from 'next/head';
 import Navbar from '../component/Navbar/Navbar';
 import Footer from '../component/Footer/Footer';
 import axios from 'axios';
+import IndexProvider from '../context/index.context';
+import Wrapper from '../component/Wrapper';
 
 function MyApp({ Component, pageProps }) {
   axios.defaults.baseURL = 'https://hack-back-aces.herokuapp.com';
+
   return (
     <>
       <Head>
@@ -47,10 +50,15 @@ function MyApp({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap'
           rel='stylesheet'
         ></link>
-      </Head>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      </Head>{' '}
+      <IndexProvider>
+        <Navbar />
+
+        <Wrapper>
+          <Component {...pageProps} />
+        </Wrapper>
+        <Footer />
+      </IndexProvider>
     </>
   );
 }

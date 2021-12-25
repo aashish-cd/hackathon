@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './medstyle.module.css';
 import Link from 'next/link';
 import { context } from '../../context/context';
 import IndividualMed from '../IndividualMed/IndividualMed';
 import Loader from 'react-loader-spinner';
+import { IndexContext } from '../../context/index.context';
 
 const Medicine = () => {
   const [objToSend, setobjToSend] = useState({});
-  const [data, setData] = useState([]);
   const [isVisible, setisVisible] = useState(false);
-
-  const [loading, setLoading] = useState(false);
-  const fetching = async (url) => {
-    setLoading(true);
-    const response = await axios.get(url);
-    setData(response.data);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    fetching('/api/stores/all');
-  }, []);
+  const { medicineData, loading } = useContext(IndexContext);
 
   const transfer = (obj) => {
     setobjToSend({ ...obj });
@@ -45,7 +34,7 @@ const Medicine = () => {
         </Link>
       )}
       <div className={style.medicineWrapper}>
-        {data?.map((obj) => {
+        {medicineData?.map((obj) => {
           return (
             <div
               className={style.cardHolder}
